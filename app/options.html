@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="styles/options.css" rel="stylesheet" type="text/css">
+    <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+  <div class="container">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <!--<h3 class="text-center">Netki Wallet Name Resolver Options</h3>-->
+      <!--<hr>-->
+      <form>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="autolookup">Enable Automatic Lookup and Replacement
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="autolookupOnMultiple">Enable Multiple Currency Option Automatic Replacement
+          </label>
+        </div>
+
+        <button class="btn btn-primary">Save Options</button>
+      </form>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <!-- build:js scripts/options.js -->
+    <script src="jquery/jquery-2.1.4.min.js"></script>
+    <script src="scripts/options.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

@@ -1,0 +1,69 @@
+{
+  "name": "Netki Wallet Name Lookup",
+  "version": "0.0.10",
+  "manifest_version": 2,
+  "description": "Lookup Wallet Names automatically or via context menu",
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "scripts/netkiUtils.js",
+      "scripts/background.js"
+    ]
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "contentSettings",
+    "contextMenus",
+    "declarativeContent",
+    "storage",
+    "notifications",
+    "webNavigation",
+    "clipboardWrite"
+  ],
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+        "styles/jquery.modal.css"
+      ],
+      "js": [
+        "jquery/jquery-2.1.4.min.js",
+        "jquery/jquery.modal.js",
+        "scripts/netkiUtils.js",
+        "scripts/contentscript.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon-19.png",
+      "38": "images/icon-38.png"
+    },
+    "default_title": "Wallet Name Lookup",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    "styles/jquery.modal.css",
+    "styles/bootstrap.min.css",
+    "images/close.png",
+    "images/spinner.gif",
+    "images/icon-38.png",
+    "images/dark_embroidery.png"
+  ]
+}

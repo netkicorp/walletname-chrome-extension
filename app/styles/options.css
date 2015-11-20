@@ -1,0 +1,23 @@
+.side-bg {
+  background-image: url('../images/dark_embroidery.png');
+}
+
+html, body {
+  height: 100%;
+  min-width: 400px;
+}
+
+.fill {
+  min-height: 100%;
+  height: 100%;
+}
+
+#main-content {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+.container {
+  padding-bottom: 2em;
+}

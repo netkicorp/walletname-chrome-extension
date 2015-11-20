@@ -1,0 +1,105 @@
+body {
+  width: auto;
+  min-width: 250px;
+  color: #000;
+  font: 12px/20px Helvetica, arial, Sans-serif;
+  padding: 3px;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style: none;
+  height: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+ul li:focus {
+  outline-width: 0px;
+}
+
+ul li:last-child {
+  margin-bottom: 4px;
+}
+
+.currencyLi {
+  height: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+.currencySelect {
+  width: 98%;
+}
+
+.lookupLi {
+  background-color: #096794;
+  color: #fff;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+
+.searchInput {
+  width: 98%;
+  border: 1px solid #09b8ce;
+  height: 20px;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  float: left;
+  margin-top: 4px;
+  margin-right: 5px;
+}
+
+.netki-logo {
+  background-image: url('../images/icon-16.png');
+}
+
+.settings {
+  background-image: url('../images/settings.png');
+}
+
+.nowork {
+  background-image: url('../images/nowork.png');
+}
+
+.lookup {
+  background-image: url('../images/search.png');
+}
+
+ul li a {
+  color: #303030;
+  text-decoration: none;
+  display: block;
+  border-radius: 0px;
+  padding: 2px;
+  -webkit-transition: all ease-in .25s;
+  outline-width: 0px;
+}
+
+ul li a:hover {
+  background-color: #eceff5;
+  color: #000;
+  cursor: pointer;
+}
+
+hr {
+  border: 1px dashed #8ed6e5;
+}

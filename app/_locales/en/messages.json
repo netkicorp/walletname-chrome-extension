@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Netki Wallet Name Lookup",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Lookup Wallet Names automatically or via context menu",
+    "description": "The description of the application"
+  }
+}
