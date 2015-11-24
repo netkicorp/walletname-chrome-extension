@@ -1,6 +1,7 @@
 {
   "name": "Netki Wallet Name Lookup",
-  "version": "0.0.10",
+  "short_name": "WN Lookup",
+  "version": "0.0.33",
   "manifest_version": 2,
   "description": "Lookup Wallet Names automatically or via context menu",
   "icons": {
@@ -15,16 +16,14 @@
     ]
   },
   "permissions": [
-    "tabs",
+    "clipboardWrite",
+    "contextMenus",
     "http://*/*",
     "https://*/*",
-    "contentSettings",
-    "contextMenus",
-    "declarativeContent",
-    "storage",
     "notifications",
-    "webNavigation",
-    "clipboardWrite"
+    "storage",
+    "tabs",
+    "webNavigation"
   ],
   "options_page": "options.html",
   "options_ui": {

@@ -11,3 +11,5 @@ scripts/*.map
 
 .DS_Store
 .idea/
+
+*.pem

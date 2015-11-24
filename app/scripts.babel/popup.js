@@ -5,16 +5,27 @@
  * @param title
  * @param message
  */
-function showNotification(title, message) {
+
+function showNotification(title, message, popupWindow) {
+  // Clear Existing Notifications
+  chrome.notifications.getAll(function (notifications) {
+    for (var i = 0; i < notifications.length; i++) {
+      chrome.notifications.clear(notifications[i].notificationId);
+    }
+  });
+
+  var notificationDate = new Date();
   chrome.notifications.create(
-    "nkPopupNotification",
+    "nkPopupNotification" + notificationDate.getTime(),
     {
       'type': 'basic',
       'iconUrl': '../images/icon-128.png',
       'title': title,
       'message': message
     },
-    function(notificationId) {}
+    function (notificationId) {
+      popupWindow.close();
+    }
   );
 }
 
@@ -37,16 +48,15 @@ function submitNonWorkingUrl(url) {
   req.onreadystatechange = function() {
     if (req.readyState === 4) {
       if(req.status !== 200) {
-        return showNotification('Submission Error', 'Unable to submit website to Netki, please try again later or e-mail opensource@netki.com to report a non-working website.');
+        return showNotification('Submission Error', 'Unable to submit website to Netki, please try again later or e-mail opensource@netki.com to report a non-working website.', self);
       }
 
       var data = JSON.parse(req.responseText);
       if(data.success) {
-        showNotification('Thank You', 'Thank you for letting us know that this website does not work with the Netki Wallet Name Lookup extension!');
+        showNotification('Thank You', 'Thank you for letting us know that this website does not work with the Netki Wallet Name Lookup extension!', self);
       } else {
-        showNotification('Submission Error', 'Unable to submit website to Netki, please try again later or e-mail opensource@netki.com to report a non-working website.');
+        showNotification('Submission Error', 'Unable to submit website to Netki, please try again later or e-mail opensource@netki.com to report a non-working website.', self);
       }
-      self.close();
     }
   };
   req.send(JSON.stringify(postData));

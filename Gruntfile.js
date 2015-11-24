@@ -22,7 +22,7 @@ module.exports = function (grunt) {
     app: 'app',
     dist: 'dist',
     srcScript: '<%= config.app %>/scripts.babel'
-  };
+};
 
   grunt.initConfig({
 
@@ -242,7 +242,10 @@ module.exports = function (grunt) {
     //   }
     // },
     // concat: {
-    //   dist: {}
+    //   dist: {
+    //     src: ['<%= config.app %>/scripts/netkiUtils.js', '<%= config.app %>/scripts/background.js'],
+    //     dest: ['<%= config.app %>/scripts/background.merged.js']
+    //   }
     // },
 
     // Copies remaining files to places other tasks can use
@@ -260,6 +263,7 @@ module.exports = function (grunt) {
             'styles/{,*/}*.css',
             'styles/fonts/{,*/}*.*',
             '_locales/{,*/}*.json',
+            'scripts/{,*/}*.js'
           ]
         }]
       }
@@ -284,7 +288,7 @@ module.exports = function (grunt) {
           buildnumber: true,
           indentSize: 2,
           background: {
-            target: 'scripts/background.js',
+            target: 'scripts/background.merged.js',
             exclude: [
               'scripts/chromereload.js'
             ]
@@ -301,7 +305,7 @@ module.exports = function (grunt) {
         options: {
           archive: function() {
             var manifest = grunt.file.readJSON('app/manifest.json');
-            return 'package/walletname chrome extension-' + manifest.version + '.zip';
+            return 'package/netkiWalletNameLookup-' + manifest.version + '.zip';
           }
         },
         files: [{
